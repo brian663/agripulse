@@ -1,0 +1,344 @@
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar-container {
+    min-height: var(--navbar-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.logo-mark {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    background: var(--primary);
+    border-radius: 50% 50% 50% 8px;
+    transform: rotate(-10deg);
+}
+
+.logo-mark span {
+    width: 14px;
+    height: 20px;
+    border-left: 3px solid var(--white);
+    border-radius: 50%;
+    transform: rotate(35deg);
+}
+
+.logo-text {
+    color: var(--black);
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.logo-text span {
+    color: var(--primary);
+}
+
+
+/* =========================
+   DESKTOP NAVIGATION
+========================= */
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    margin-left: auto;
+}
+
+.navbar-links a {
+    position: relative;
+    padding: 25px 0;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color var(--transition);
+}
+
+.navbar-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 17px;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width var(--transition);
+}
+
+.navbar-links a:hover {
+    color: var(--primary);
+}
+
+.navbar-links a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================
+   NAVBAR ACTIONS
+========================= */
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.navbar-icon-button {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    background: transparent;
+    color: var(--text);
+
+    transition:
+        background-color var(--transition),
+        color var(--transition),
+        border-color var(--transition);
+}
+
+.navbar-icon-button:hover {
+    background: var(--light-green);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+
+/* =========================
+   SUBSCRIBE BUTTON
+========================= */
+
+.navbar-subscribe {
+    padding: 9px 16px;
+
+    background: var(--primary);
+    color: var(--white);
+
+    border-radius: var(--radius-md);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    transition:
+        background-color var(--transition),
+        transform var(--transition);
+}
+
+.navbar-subscribe:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.mobile-menu-button {
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    background: transparent;
+    color: var(--text);
+
+    transition:
+        background-color var(--transition),
+        color var(--transition);
+}
+
+.mobile-menu-button:hover {
+    background: var(--light-green);
+    color: var(--primary);
+}
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-menu {
+    border-top: 1px solid var(--border);
+    background: var(--white);
+}
+
+.mobile-menu-links {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px 20px;
+}
+
+.mobile-menu-links a,
+.mobile-menu-links button {
+    width: 100%;
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 4px;
+
+    border: none;
+    border-bottom: 1px solid var(--border);
+
+    background: transparent;
+    color: var(--text);
+
+    text-align: left;
+    font-size: 0.95rem;
+
+    transition:
+        color var(--transition),
+        background-color var(--transition);
+}
+
+.mobile-menu-links a:hover,
+.mobile-menu-links button:hover {
+    color: var(--primary);
+}
+
+
+/* =========================
+   MOBILE SUBSCRIBE
+========================= */
+
+.mobile-menu-links .mobile-subscribe {
+    justify-content: center;
+
+    margin: 14px 0 4px;
+    padding: 11px 16px;
+
+    border: none;
+    border-radius: var(--radius-md);
+
+    background: var(--primary);
+    color: var(--white);
+
+    font-weight: 600;
+}
+
+.mobile-menu-links .mobile-subscribe:hover {
+    background: var(--primary-dark);
+    color: var(--white);
+}
+
+
+/* =========================
+   MOBILE DASHBOARD
+========================= */
+
+.mobile-menu-links .mobile-dashboard {
+    border-bottom: 1px solid var(--border);
+}
+
+
+/* =========================
+   MOBILE THEME
+========================= */
+
+.mobile-menu-links .mobile-theme-button {
+    cursor: pointer;
+}
+
+
+/* =========================
+   RESPONSIVE NAVBAR
+========================= */
+
+@media (max-width: 1100px) {
+    .navbar-container {
+        gap: 18px;
+    }
+
+    .navbar-links {
+        gap: 18px;
+    }
+
+    .navbar-links a {
+        font-size: 0.85rem;
+    }
+
+    .navbar-actions {
+        gap: 5px;
+    }
+
+    .navbar-subscribe {
+        padding: 8px 13px;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .navbar-links,
+    .navbar-actions {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: flex;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .navbar-container {
+        min-height: 64px;
+    }
+
+    .logo-mark {
+        width: 31px;
+        height: 31px;
+    }
+
+    .logo-text {
+        font-size: 1.05rem;
+    }
+
+    .mobile-menu-links {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
